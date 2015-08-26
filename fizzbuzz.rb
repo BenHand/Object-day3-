@@ -1,20 +1,19 @@
 
 
 
-for x in 1..100                 # => 1..100
-  if x % 3 == 0                 # => false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, false, false, true, ...
-  puts "fizz"                   # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+for x in 1..100                # => 1..100
+  if x % 3 == 0 && x % 5 == 0  # => false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, false, false, false, false, false, false, fal...
+    puts "fizzbuzz"            # => nil, nil, nil, nil, nil, nil
   elsif
-     x % 5 == 0                 # => false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true, false, false, false, false, false, false, true, false, false, true
-      puts "buzz"               # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+    x % 5 == 0                 # => false, false, false, false, true, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, true, false, false, false, false, false, false, false, false, true, false, false, false, false, true, false, fa...
+    puts "buzz"                # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
   elsif
-      x % 3 == 0 && x % 5 == 0  # => false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
-      puts "fizzbuzz"
-    else
-      puts x                    # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
-
-  end  # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, ...
-end    # => 1..100
+     x % 3 == 0                # => false, false, true, false, true, false, false, true, false, true, false, false, false, false, true, false, true, false, false, true, false, true, false, false, false, false, true, false, true, false, false, true, false, true, false, false, false, false, true, false, true, false, false, true, false, true, false, false, false, false, true, false, true, false, false, true, false, true, false, false, false, false, true, false, true, false, false, true, false, t...
+    puts "fizz"                # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+  else
+    puts x                     # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil
+  end                          # => nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, nil, n...
+end                            # => 1..100
 
 
 # >> 1
@@ -31,7 +30,7 @@ end    # => 1..100
 # >> fizz
 # >> 13
 # >> 14
-# >> fizz
+# >> fizzbuzz
 # >> 16
 # >> 17
 # >> fizz
@@ -46,7 +45,7 @@ end    # => 1..100
 # >> fizz
 # >> 28
 # >> 29
-# >> fizz
+# >> fizzbuzz
 # >> 31
 # >> 32
 # >> fizz
@@ -61,7 +60,7 @@ end    # => 1..100
 # >> fizz
 # >> 43
 # >> 44
-# >> fizz
+# >> fizzbuzz
 # >> 46
 # >> 47
 # >> fizz
@@ -76,7 +75,7 @@ end    # => 1..100
 # >> fizz
 # >> 58
 # >> 59
-# >> fizz
+# >> fizzbuzz
 # >> 61
 # >> 62
 # >> fizz
@@ -91,7 +90,7 @@ end    # => 1..100
 # >> fizz
 # >> 73
 # >> 74
-# >> fizz
+# >> fizzbuzz
 # >> 76
 # >> 77
 # >> fizz
@@ -106,7 +105,7 @@ end    # => 1..100
 # >> fizz
 # >> 88
 # >> 89
-# >> fizz
+# >> fizzbuzz
 # >> 91
 # >> 92
 # >> fizz
