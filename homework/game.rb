@@ -23,10 +23,10 @@ class Deck
       new_card = Card.new(suit, value) # why are none of these values filling in?
       @cards.push(new_card)
       end
-      @cards.push(suit, "J")
-      @cards.push(suit, "Q")
-      @cards.push(suit, "K")
-      @cards.push(suit, "A")
+      # @cards.push(suit, "J")
+      # @cards.push(suit, "Q")
+      # @cards.push(suit, "K")
+      # @cards.push(suit, "A")
     end
   end
   def draw
@@ -58,7 +58,6 @@ results = gets.chomp                          # ~> NoMethodError: undefined meth
 if results.downcase == "y"
   puts "let's begin"
 while deck.length > 0 do
-  gets
   player_card = deck.draw
   dealer_card = deck.draw
   end
@@ -78,6 +77,22 @@ class Deck
 end
 
 class Hands
+def dealer_hand
+  @dealer_hand []
+  @dealer_hand.push(new_card)
+end
+def player_hand
+  @player_hand[]
+  @player_hand.push(new_card)
+end
+2.times @hand.push(player_card)# value of initial draw This needs to start the
+2.times @hand.push(dealer_card)# @hand array
+
+
+If @dealer_hand < 16 deck.draw  #dealer hits unless over 16
+else
+
+
 # Hands take up to 5 cards over 5 auto wins
 # cards are added up based on value and compaired against dealer total and 21 max.
 # Both hands are held by this class only the results of either the player or dealer are displayed.
