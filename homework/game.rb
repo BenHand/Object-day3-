@@ -20,7 +20,7 @@ class Deck
     suits = [:hearts, :diamonds, :spades, :clubs]
     suits.each do |suit|
       (2..10).each do |value|
-      new_card = Card.new(suit, value)
+      new_card = Card.new(suit, value) # why are none of these values filling in?
       @cards.push(new_card)
       end
       @cards.push(suit, "J")
@@ -54,7 +54,7 @@ results = gets.chomp                          # ~> NoMethodError: undefined meth
   player = Player.new
   deck = Deck.new
   deck.shuffle
-
+# it runs asks the question and sits there..
 if results.downcase == "y"
   puts "let's begin"
 while deck.length > 0 do
