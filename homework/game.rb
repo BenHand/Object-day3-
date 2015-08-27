@@ -20,13 +20,13 @@ class Deck
     suits = [:hearts, :diamonds, :spades, :clubs]
     suits.each do |suit|
       (2..10).each do |value|
-        new_card = Card.new(suit, value)
-        @cards.push(new_card)
+      new_card = Card.new(suit, value)
+      @cards.push(new_card)
       end
-      # @cards = Card.new(suit, "J")
-      # @cards = Card.new(suit, "Q")
-      # @cards = Card.new(suit, "K")
-      # @cards = Card.new(suit, "A")
+      @cards.push(suit, "J")
+      @cards.push(suit, "Q")
+      @cards.push(suit, "K")
+      @cards.push(suit, "A")
     end
   end
   def draw
@@ -58,12 +58,10 @@ results = gets.chomp                          # ~> NoMethodError: undefined meth
 if results.downcase == "y"
   puts "let's begin"
 while deck.length > 0 do
-gets
+  gets
   player_card = deck.draw
   dealer_card = deck.draw
-end
-
-
+  end
 
 else
     puts "Too bad"
